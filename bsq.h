@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 22:49:55 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 00:15:46 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void	ft_putstr(char *str);
 void	ft_puterr(char *str);
 void	ft_solve_bsq(int map_fd);
 int		ft_read_info(t_map *map, int map_fd);
+int		ft_get_rows(char *buffer, int pos);
+int		ft_atoi(char *str);
 
 #endif
