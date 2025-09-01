@@ -1,4 +1,4 @@
-SOURCES = bsq.c utils.c
+SOURCES = bsq.c utils.c solver.c
 OBJECTS = $(SOURCES:.c=.o)
 INCLUDES = -I .
 
@@ -17,7 +17,7 @@ $(NAME): $(OBJECTS)
 clean:
 	@rm -f $(OBJECTS)
 
-fclean: clean 
+fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
