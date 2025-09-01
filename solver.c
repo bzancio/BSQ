@@ -6,13 +6,13 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:29 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 21:28:36 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 21:50:25 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-void	ft_solve_bsq(char *str)
+void	ft_solve_bsq(int map_fd)
 {
 	return ;
 }
