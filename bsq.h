@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 21:03:41 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 21:30:07 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ typedef struct s_map
 
 void	ft_putstr(char *str);
 void	ft_puterr(char *str);
+void	ft_solve_bsq(char *str);
 
 #endif
