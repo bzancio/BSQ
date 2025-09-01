@@ -6,8 +6,13 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 19:25:48 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 22:54:02 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
+
+int	ft_read_info(t_map *map, int map_fd)
+{
+	return (1);
+}

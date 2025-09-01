@@ -1,4 +1,4 @@
-SOURCES = bsq.c utils.c solver.c
+SOURCES = bsq.c utils.c solver.c parser.c
 OBJECTS = $(SOURCES:.c=.o)
 INCLUDES = -I .
 
