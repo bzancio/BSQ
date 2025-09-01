@@ -1,0 +1,9 @@
+# Archivos objeto
+*.o
+
+# Ejecutable
+bsq
+
+# Archivos temporales del sistema
+.DS_Store
+*.swp
