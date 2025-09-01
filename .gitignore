@@ -7,3 +7,4 @@ bsq
 # Archivos temporales del sistema
 .DS_Store
 *.swp
+.vscode
