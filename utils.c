@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:35 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 20:58:31 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 21:03:24 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
-	write(1, "\n", 1);
 }
 
 void	ft_puterr(char *str)
 {
 	while (*str)
 		write(2, str++, 1);
-	write(1, "\n", 1);
 }
