@@ -6,13 +6,13 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 15:54:09 by serromer          #+#    #+#             */
-/*   Updated: 2025/09/01 18:52:09 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 20:19:17 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    return ;
+	return ;
 }
