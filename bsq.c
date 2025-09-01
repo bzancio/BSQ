@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 15:54:09 by serromer          #+#    #+#             */
-/*   Updated: 2025/09/01 22:27:07 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 00:44:23 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			map_fd = open(argv[i], O_RDONLY);
-			ft_solve_bsq(map_fd);
-			if (map_fd > 0)
+			if (map_fd < 0)
+				ft_puterr(ERR_MSG);
+			else
+			{
+				ft_solve_bsq(map_fd);
 				close(map_fd);
+			}
 			if (i + 1 < argc)
 				write(1, "\n", 1);
 			i++;
