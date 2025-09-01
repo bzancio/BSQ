@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/01 18:51:03 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/01 19:11:39 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 #endif
