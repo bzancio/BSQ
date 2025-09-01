@@ -1,4 +1,4 @@
-SOURCES = bsq.c
+SOURCES = bsq.c utils.c
 OBJECTS = $(SOURCES:.c=.o)
 INCLUDES = -I .
 
