@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 00:04:31 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 00:52:27 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_read_info(t_map *map, int map_fd)
 	pos = 0;
 	while (read(map_fd, &c, 1) > 0 && c != '\n')
 	{
-		if (pos >= 63)
+		if (pos >= 63 || c < 32 || c > 126)
 			return (1);
 		buffer[pos++] = c;
 	}
