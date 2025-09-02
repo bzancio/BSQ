@@ -3,11 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
+/*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:16 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 05:10:34 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 08:52:53 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
+
