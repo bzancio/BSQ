@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 01:00:18 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 01:19:38 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	ft_free_words(char **res, int i);
 int		ft_valid_map(t_map map);
 void	ft_free_all(char **grid);
 void	ft_print_map(char **map);
+void	ft_find_fill_bsq(t_map map);
 
 #endif
