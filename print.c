@@ -6,13 +6,21 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:16 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 00:54:05 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 01:03:41 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-void	ft_print_grid(char **map)
+void	ft_print_map(char **map)
 {
-	return ;
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		ft_putstr(map[i]);
+		write(1, "\n", 1);
+		i++;
+	}
 }
