@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 01:14:59 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 01:19:50 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 01:23:45 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_find_fill_bsq(t_map map)
 {
-	return ;
+	if (map.grid)
+		return ;
 }
