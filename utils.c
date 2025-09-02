@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:35 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 00:17:49 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 03:05:07 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ void	ft_puterr(char *str)
 		write(2, str++, 1);
 }
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str [i])
+		i++;
+	return (i);
+}
+
 int	ft_atoi(char *str)
 {
 	int	res;
@@ -39,4 +49,31 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (res);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	int		s1_len;
+	int		s2_len;
+	int		i;
+	char	*str;
+
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < s1_len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (i < s1_len + s2_len)
+	{
+		str[i] = s2[i - s1_len];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

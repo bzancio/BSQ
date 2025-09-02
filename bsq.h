@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 00:15:46 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 03:02:35 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <fcntl.h>
 
 # define ERR_MSG "map error\n"
+# define MAP_BUFFER_SIZE 1024
+# define INFO_BUFFER_SIZE 64
 
 typedef struct s_map
 {
@@ -35,5 +37,8 @@ void	ft_solve_bsq(int map_fd);
 int		ft_read_info(t_map *map, int map_fd);
 int		ft_get_rows(char *buffer, int pos);
 int		ft_atoi(char *str);
+int		ft_read_map(t_map *map, int map_fd);
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
 
 #endif

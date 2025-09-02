@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 00:52:27 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 03:34:32 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_get_rows(char *buffer, int pos)
 {
-	char	str_buffer[64];
+	char	str_buffer[INFO_BUFFER_SIZE];
 	int		i;
 
 	i = 0;
@@ -29,7 +29,7 @@ int	ft_get_rows(char *buffer, int pos)
 
 int	ft_read_info(t_map *map, int map_fd)
 {
-	char	buffer[64];
+	char	buffer[INFO_BUFFER_SIZE];
 	char	c;
 	int		pos;
 
@@ -52,5 +52,33 @@ int	ft_read_info(t_map *map, int map_fd)
 	map->rows = ft_get_rows(buffer, pos - 3);
 	if (map->rows <= 0)
 		return (1);
+	return (0);
+}
+
+int	ft_read_map(t_map *map, int map_fd)
+{
+	char	map_buffer[MAP_BUFFER_SIZE];
+	char	*raw_map;
+	char	*temp;
+	int		bytes;
+
+	raw_map = malloc(sizeof(char));
+	if (!raw_map)
+		return (1);
+	raw_map[0] = '\0';
+	while ((bytes = read(map_fd, map_buffer, MAP_BUFFER_SIZE)) > 0)
+	{
+		map_buffer[bytes] = '\0';
+		temp = ft_strjoin(raw_map, map_buffer);
+		free(raw_map);
+		if (!temp)
+			return (1);
+		raw_map = temp;
+	}
+	map->grid = ft_split(raw_map, '\n');
+	if (!map->grid)
+		return (1);
+	free(raw_map);
+	map->cols = ft_strlen(map->grid[0]);
 	return (0);
 }
