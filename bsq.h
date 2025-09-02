@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 05:09:23 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/02 06:13:17 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int		ft_atoi(char *str);
 int		ft_read_map(t_map *map, int map_fd);
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
+char	*ft_read_raw_map(int map_fd);
+char	**ft_split(char *str, char charset);
 
 #endif
