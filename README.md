@@ -130,3 +130,10 @@ Archivo → ft_solve_bsq
              ├─> ft_read_raw_map → lee todo el mapa
              └─> ft_split        → divide en filas
 ```
+
+# Logica serromer
+
+##### ft_mark_square
+* **max_i** → índice de la fila inferior derecha del cuadrado que quieres marcar.
+* **max_j** → índice de la columna inferior derecha del cuadrado.
+* **size_max** → tamaño del cuadrado que quieres dibujar.

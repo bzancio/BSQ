@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 08:42:28 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/02 09:45:31 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/09/02 09:58:46 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <stdlib.h>
 
 int ft_min(int a, int b, int c) {
-    int m;
+    int temp;
 
-    m = 0;
+    temp = 0;
 
     if (a < b){
-        m=a;
+        temp=a;
     }else{
-        m=b;
+        temp=b;
     }
-    if(m<c)
-        return m;
+    if(temp<c)
+        return temp;
     return c;
 }
 
@@ -35,7 +35,7 @@ void ft_print_maps(char map[][28],int rows){
     i=0;
     while (i < rows) {
         j = 0;
-        while (map[i][j] != '\0') {
+        while (map[i][j]) {
             write(1, &map[i][j], 1);
             j++;
         }
@@ -96,10 +96,10 @@ void ft_maps(char map[][28], int rows, int cols){
 }
 
 int main(void) {
-    //int ac, char **av
-    // if (ac != 2) {
-    //     write(2, "Usage: ./bsq file\n", 19);
-    //     return 84;
+    // int argc, char **argv
+    // if (argc != 2) {
+    //     write(2, "Usage: ./bsq example_file", xx);
+    //     return NULL;
     // }
     int rows; 
     int cols;
