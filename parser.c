@@ -6,11 +6,33 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 21:41:50 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 00:00:35 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
+
+int	ft_valid_map(t_map map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map.grid[i])
+	{
+		j = 0;
+		while (map.grid[i][j])
+		{
+			if (map.grid[i][j] != map.empty && map.grid[i][j] != map.obstacle)
+				return (1);
+			j++;
+		}
+		if (j != map.cols)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	ft_get_rows(char *buffer, int pos)
 {
