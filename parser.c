@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 00:00:35 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 00:36:21 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_valid_map(t_map map)
 	int	i;
 	int	j;
 
+	if (!map.grid || map.rows <= 0 || map.cols <= 0)
+		return (1);
 	i = 0;
 	while (map.grid[i])
 	{
@@ -31,6 +33,8 @@ int	ft_valid_map(t_map map)
 			return (1);
 		i++;
 	}
+	if (i != map.rows)
+		return (1);
 	return (0);
 }
 
@@ -79,7 +83,7 @@ int	ft_read_info(t_map *map, int map_fd)
 
 char	*ft_read_raw_map(int map_fd)
 {
-	char	map_buffer[MAP_BUFFER_SIZE];
+	char	map_buffer[MAP_BUFFER_SIZE + 1];
 	char	*raw_map;
 	char	*temp;
 	int		bytes;
@@ -111,8 +115,10 @@ int	ft_read_map(t_map *map, int map_fd)
 	raw_map = ft_read_raw_map(map_fd);
 	map->grid = ft_split(raw_map, '\n');
 	free(raw_map);
-	if (!map->grid)
+	if (!map->grid || !map->grid[0])
 		return (1);
 	map->cols = ft_strlen(map->grid[0]);
+	if (map->cols <= 0)
+		return (1);
 	return (0);
 }

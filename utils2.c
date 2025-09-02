@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 05:17:39 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/02 22:12:46 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 00:31:07 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,21 @@ char	**ft_split(char *str, char sep)
 	int		index;
 	int		i;
 
-	i = 0;
-	index = 0;
 	words = ft_count_words(str, sep);
 	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);
+	index = 0;
+	i = 0;
 	while (i < words)
 	{
+		while (str[index] == sep)
+			index++;
 		res[i] = ft_alloc_word(str, &index, sep);
 		if (!res[i])
 		{
 			ft_free_words(res, i - 1);
-			free(res);
-			return (NULL);
+			return (free(res), NULL);
 		}
 		i++;
 	}
