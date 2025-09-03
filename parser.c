@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 00:36:21 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 03:00:01 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_valid_map(t_map map)
 	i = 0;
 	while (map.grid[i])
 	{
+		if (map.grid[i][0] == '\0')
+			return (1);
 		j = 0;
 		while (map.grid[i][j])
 		{
@@ -113,6 +115,13 @@ int	ft_read_map(t_map *map, int map_fd)
 	char	*raw_map;
 
 	raw_map = ft_read_raw_map(map_fd);
+	if (!raw_map)
+		return (1);
+	if (ft_invalid_empty_lines(raw_map))
+	{
+		free(raw_map);
+		return (1);
+	}
 	map->grid = ft_split(raw_map, '\n');
 	free(raw_map);
 	if (!map->grid || !map->grid[0])
