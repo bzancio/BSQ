@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 01:14:59 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 14:04:27 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/09/03 15:20:01 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_mark_square(char **map, int max_i, int max_j, int size_max)
 	}
 }
 
-void	ft_maps(char **map, int rows, int cols)
+void	ft_maps(char **map, int rows, int cols, char sign_obs)
 {
 	int	dp[rows][cols];
 	int	max;
@@ -63,7 +63,7 @@ void	ft_maps(char **map, int rows, int cols)
 		j = 0;
 		while (j < cols)
 		{
-			if (map[i][j] == 'o')
+			if (map[i][j] == sign_obs)
 				dp[i][j] = 0;
 			else if (i == 0 || j == 0)
 				dp[i][j] = 1;
@@ -87,6 +87,6 @@ void	ft_find_fill_bsq(t_map map)
 	if (!map.grid)
 		return ;
 
-	ft_maps(map.grid,map.rows,map.cols);
+	ft_maps(map.grid,map.rows,map.cols,map.obstacle);
 	
 }
