@@ -6,11 +6,31 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 03:02:37 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 14:07:39 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 16:14:01 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
+
+int	ft_map_has_empty(t_map map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map.rows)
+	{
+		j = 0;
+		while (j < map.cols)
+		{
+			if (map.grid[i][j] == map.empty)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	ft_invalid_empty_lines(char *raw_map)
 {
