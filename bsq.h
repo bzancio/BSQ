@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 17:55:24 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 18:31:30 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ typedef struct s_map
 void	ft_putstr(char *str);
 void	ft_puterr(char *str);
 void	ft_solve_bsq(int map_fd);
-int		ft_read_info(t_map *map, int map_fd);
+int		ft_read_info(t_map *map, char *raw_map);
 int		ft_get_rows(char *buffer, int pos);
 int		ft_atoi(char *str);
-int		ft_read_map(t_map *map, int map_fd);
+int		ft_read_map(t_map *map, char *raw_map);
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_read_raw_map(int map_fd);

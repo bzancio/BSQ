@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
+/*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:09 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 03:00:01 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 18:28:57 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ int	ft_get_rows(char *buffer, int pos)
 	return (ft_atoi(str_buffer));
 }
 
-int	ft_read_info(t_map *map, int map_fd)
+int	ft_read_info(t_map *map, char *raw_map)
 {
 	char	buffer[INFO_BUFFER_SIZE];
-	char	c;
 	int		pos;
 
 	pos = 0;
-	while (read(map_fd, &c, 1) > 0 && c != '\n')
+	while (raw_map[pos] && raw_map[pos] != '\n')
 	{
-		if (pos >= 63 || c < 32 || c > 126)
+		if (pos >= 63 || raw_map[pos] < 32 || raw_map[pos] > 126)
 			return (1);
-		buffer[pos++] = c;
+		buffer[pos] = raw_map[pos];
+		pos++;
 	}
 	if (pos < 4)
 		return (1);
@@ -110,20 +110,20 @@ char	*ft_read_raw_map(int map_fd)
 	return (raw_map);
 }
 
-int	ft_read_map(t_map *map, int map_fd)
+int	ft_read_map(t_map *map, char *raw_map)
 {
-	char	*raw_map;
+	int		i;
+	char	*map_start;
 
-	raw_map = ft_read_raw_map(map_fd);
-	if (!raw_map)
+	i = 0;
+	while (raw_map[i] && raw_map[i] != '\n')
+		i++;
+	if (raw_map[i] == '\n')
+		i++;
+	map_start = raw_map + i;
+	if (ft_invalid_empty_lines(map_start))
 		return (1);
-	if (ft_invalid_empty_lines(raw_map))
-	{
-		free(raw_map);
-		return (1);
-	}
-	map->grid = ft_split(raw_map, '\n');
-	free(raw_map);
+	map->grid = ft_split(map_start, '\n');
 	if (!map->grid || !map->grid[0])
 		return (1);
 	map->cols = ft_strlen(map->grid[0]);
