@@ -6,27 +6,13 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 01:14:59 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 17:12:24 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 17:32:07 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	ft_min(int a, int b, int c)
-{
-	int	temp;
-
-	temp = 0;
-	if (a < b)
-		temp = a;
-	else
-		temp = b;
-	if (temp < c)
-		return (temp);
-	return (c);
-}
-
-void	ft_initialize_dp(int **dp, char **map, t_map maps)
+void	ft_initialize_dp(int **d, char **map, t_map maps)
 {
 	int	i;
 	int	j;
@@ -38,11 +24,11 @@ void	ft_initialize_dp(int **dp, char **map, t_map maps)
 		while (j < maps.cols)
 		{
 			if (map[i][j] == maps.obstacle)
-				dp[i][j] = 0;
+				d[i][j] = 0;
 			else if (i == 0 || j == 0)
-				dp[i][j] = 1;
+				d[i][j] = 1;
 			else
-				dp[i][j] = 1 + ft_min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+				d[i][j] = 1 + ft_min(d[i - 1][j], d[i][j - 1], d[i - 1][j - 1]);
 			j++;
 		}
 		i++;
@@ -93,28 +79,39 @@ void	ft_mark_square_by_max(char **map, int *max, char sign_full)
 	}
 }
 
-void	ft_maps(char **map, t_map maps)
+int	ft_maps(char **map, t_map maps)
 {
 	int	**dp;
 	int	*max_info;
 	int	i;
 
 	dp = malloc(maps.rows * sizeof(int *));
+	if (!dp)
+		return (1);
 	i = 0;
 	while (i < maps.rows)
 	{
 		dp[i] = malloc(maps.cols * sizeof(int));
+		if (!dp[i])
+			return (1);
 		i++;
 	}
 	ft_initialize_dp(dp, map, maps);
 	max_info = malloc(3 * sizeof(int));
+	if (!max_info)
+		return (1);
 	ft_find_max(dp, maps.rows, maps.cols, max_info);
 	ft_mark_square_by_max(map, max_info, maps.full);
+	return (0);
 }
 
 void	ft_find_fill_bsq(t_map map)
 {
 	if (!map.grid)
 		return ;
-	ft_maps(map.grid, map);
+	if (ft_maps(map.grid, map))
+	{
+		ft_puterr(ERR_MSG);
+		return ;
+	}
 }
