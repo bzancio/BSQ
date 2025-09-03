@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 01:14:59 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 16:51:14 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/09/03 16:55:26 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,24 +86,6 @@ void ft_mark_square_by_max(char **map, int *max, char sign_full)
     {
         j = max[1];
         while (j > max[1] - max[2])
-        {
-            map[i][j] = sign_full;
-            j--;
-        }
-        i--;
-    }
-}
-
-void ft_mark_square(char **map, int max_i, int max_j, int size_max, char sign_full)
-{
-    int i;
-    int j;
-
-    i = max_i;
-    while (i > max_i - size_max)
-    {
-        j = max_j;
-        while (j > max_j - size_max)
         {
             map[i][j] = sign_full;
             j--;
