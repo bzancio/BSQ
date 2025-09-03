@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 17:29:31 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 17:55:24 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ int		ft_maps(char **map, t_map maps);
 int		ft_map_has_empty(t_map map);
 void	ft_initialize_dp(int **d, char **map, t_map maps);
 void	ft_find_max(int **dp, int rows, int cols, int *max_info);
+void	ft_free_all_int(int **grid, int rows);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 01:14:59 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 17:32:07 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 17:56:08 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,16 +93,19 @@ int	ft_maps(char **map, t_map maps)
 	{
 		dp[i] = malloc(maps.cols * sizeof(int));
 		if (!dp[i])
+		{
+			ft_free_all_int(dp, i);
 			return (1);
+		}
 		i++;
 	}
 	ft_initialize_dp(dp, map, maps);
 	max_info = malloc(3 * sizeof(int));
 	if (!max_info)
-		return (1);
+		return (ft_free_all_int(dp, i), 1);
 	ft_find_max(dp, maps.rows, maps.cols, max_info);
 	ft_mark_square_by_max(map, max_info, maps.full);
-	return (0);
+	return (ft_free_all_int(dp, i), free(max_info), 0);
 }
 
 void	ft_find_fill_bsq(t_map map)

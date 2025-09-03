@@ -1,10 +1,10 @@
-SOURCES = bsq.c utils.c solver.c parser.c split_utils.c freeutil.c print.c algo.c empty_utils.c utils2.c
+SOURCES = bsq.c utils.c solver.c parser.c split_utils.c free_utils.c print.c algo.c empty_utils.c utils2.c
 OBJECTS = $(SOURCES:.c=.o)
 INCLUDES = -I .
 
 CC = cc
 NAME = bsq
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
