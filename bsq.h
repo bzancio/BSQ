@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 16:14:34 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 16:50:52 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ void	ft_print_map(char **map);
 void	ft_find_fill_bsq(t_map map);
 int		ft_invalid_empty_lines(char *raw_map);
 int		ft_min(int a, int b, int c);
-void	ft_mark_square(char **map, int max_i, int max_j, int size_max);
-void	ft_maps(char **map, int rows, int cols, char sign_obs);
+void ft_mark_square(char **map, int max_i, int max_j, int size_max, char sign_full);
+void 	ft_maps(char **map, t_map maps);
 int		ft_map_has_empty(t_map map);
-
+void 	ft_initialize_dp(int **dp, char **map, t_map maps);
+void 	ft_find_max(int **dp, int rows, int cols, int *max_info);
 #endif
+
