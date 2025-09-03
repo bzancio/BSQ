@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 14:23:10 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 14:27:35 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 
 # define ERR_MSG "map error\n"
-# define MAP_BUFFER_SIZE 1024
+# define MAP_BUFFER_SIZE 16384
 # define INFO_BUFFER_SIZE 64
 
 typedef struct s_map
@@ -54,4 +54,5 @@ int		ft_invalid_empty_lines(char *raw_map);
 int		ft_min(int a, int b, int c);
 void	ft_mark_square(char **map, int max_i, int max_j, int size_max);
 void	ft_maps(char **map, int rows, int cols);
+
 #endif
