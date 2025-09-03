@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 14:04:19 by sergio-alej      ###   ########.fr       */
-=======
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:47:34 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 14:17:42 by ibuil            ###   ########.fr       */
->>>>>>> 227b300 (añadidas pruebas para el parser y arreglado bug en mapas grandes)
+/*   Updated: 2025/09/03 14:23:10 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
