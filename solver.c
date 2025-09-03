@@ -6,7 +6,7 @@
 /*   By: ibuil <ibuil@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:21:29 by ibuil             #+#    #+#             */
-/*   Updated: 2025/09/03 16:11:38 by ibuil            ###   ########.fr       */
+/*   Updated: 2025/09/03 16:18:04 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_solve_bsq(int map_fd)
 		ft_puterr(ERR_MSG);
 		return ;
 	}
-	if (ft_valid_map(map) || !ft_has_empty(map))
+	if (ft_valid_map(map) || (!ft_has_empty(map)))
 	{
 		ft_puterr(ERR_MSG);
 		ft_free_all(map.grid);
