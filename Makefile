@@ -4,7 +4,7 @@ INCLUDES = -I .
 
 CC = cc
 NAME = bsq
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
